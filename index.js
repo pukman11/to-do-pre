@@ -52,18 +52,13 @@ function createItem(item) {
     saveTasks(currentTasks);
   });
 
-  textElement.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      textElement.blur();
-    }
-  });
+  
 
   return clone;
 }
 
 function getTasksFromDOM() {
-  const itemsNamesElements = document.querySelectorAll('.to-do__item-text');
+  const itemsNamesElements = listElement.querySelectorAll('.to-do__item-text');
   const tasks = [];
   
   itemsNamesElements.forEach(element => {
